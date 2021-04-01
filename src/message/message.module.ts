@@ -1,8 +1,8 @@
 //import { RabbitMQModule } from '@golevelup/nestjs-rabbitmq';
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import { amqpService } from './amqp.service';
-import { amqpController } from './amqp.controller';
+import { MessageService } from './message.service';
+import { MessageController } from './message.controller';
 import { ClientsModule, Transport } from '@nestjs/microservices';
 
 @Module({
@@ -21,8 +21,9 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
         },
       ]),
     ],
-    providers:[amqpService],
-    controllers:[amqpController],
+    providers:[MessageService],
+    exports: [MessageService],
+    controllers:[MessageController],
 })
 export class MessageModule{}
 

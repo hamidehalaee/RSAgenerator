@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { amqp } from 'amqplib/callback_api';
 
 @Injectable()
-export class amqpService {
+export class MessageService {
 
    send(): void {
     //connect tp rabbitMQ server
@@ -35,7 +35,7 @@ export class amqpService {
   }
 
   receive(): any{
-    amqp.connect('amqp://localhost', function(error0, connection) {
+    amqp.connect(process.env.HOST, function(error0, connection) {
         if (error0) {
             throw error0;
         }
