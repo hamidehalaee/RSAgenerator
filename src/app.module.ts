@@ -1,11 +1,10 @@
 import { Module } from '@nestjs/common';
 import { MessageModule } from './message/amqp.module';
-import { AppController } from './rsa/app.controller';
-import { AppService } from './rsa/app.service';
+import { RSAModule } from './rsa/rsa.module';
+
+
 
 @Module({
-  imports: [MessageModule],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [MessageModule,RSAModule],
 })
 export class AppModule {}

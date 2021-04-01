@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { generateKeyPair } from 'crypto';
 
 @Injectable()
-export class AppService {
+export class RSAService {
 
   
   getId(id): void {
