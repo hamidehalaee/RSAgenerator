@@ -4,7 +4,7 @@ import { amqp } from 'amqplib/callback_api';
 @Injectable()
 export class MessageService {
 
-   send(): void {
+   send(): any {
     //connect tp rabbitMQ server
     amqp.connect(process.env.HOST, function(error0, connection) {
         if (error0) {
