@@ -1,6 +1,5 @@
 import { Client } from 'pg';
 import { Injectable } from '@nestjs/common';
-import { ValueInsert } from './interface/databasevalueinsert.interface';
 
 
 @Injectable()

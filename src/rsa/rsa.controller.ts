@@ -3,10 +3,10 @@ import { RSAService } from './rsa.service';
 
 @Controller()
 export class RSAController {
-  constructor(private readonly appService: RSAService) {}
+  constructor(private readonly rsaService: RSAService) {}
 
-  @Get('/:id')
-  getHello(): string {
-    return this.appService.getHello();
+  
+  getId(): number {
+    return this.rsaService.getId();
   }
 }
